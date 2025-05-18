@@ -1,0 +1,6 @@
+@ViniAPI_1_Exemplo_HostAddress = http://localhost:5263
+
+GET {{ViniAPI_1_Exemplo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
