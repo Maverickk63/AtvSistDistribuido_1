@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ViniAPI_1_Exemplo.Model;
 
 namespace ViniAPI_1_Exemplo.Controllers
 {
     [Route("api/amigos")]
-
     [ApiController]
     public class AmigosController : Controller
     {
@@ -16,6 +15,8 @@ namespace ViniAPI_1_Exemplo.Controllers
                 new Amigo(3,"Esis","Rosalen", 2, "Pontos Extras")
             ];
 
+
+        [HttpGet]
         public IEnumerable<Amigo> Get()
         {
             return ListaAmigos;
@@ -31,11 +32,10 @@ namespace ViniAPI_1_Exemplo.Controllers
         }
 
         [HttpGet("{id}/{nome}")]
-
-        public Amigo Get(int id, string nome)
+        public Amigo get(int id, string nome)
         {
             Console.WriteLine($"id fake: {id}");
-            Amigo? amg = ListaAmigos.Find(x=> x.PrimeiroNome == nome);
+            Amigo? amg = ListaAmigos.Find(x => x.PrimeiroNome == nome);
             return amg ?? new();
         }
     }
